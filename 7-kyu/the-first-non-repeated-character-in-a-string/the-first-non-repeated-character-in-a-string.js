@@ -1,15 +1,1 @@
-function firstNonRepeated(s) {
-  
-  let charCount = {};
-  for (let char of s) {
-    charCount[char] = (charCount[char] || 0) + 1;
-  }
-  
-  for (let char of s) {
-    if (charCount[char] === 1) {
-      return char;
-    }
-  }
-  return null;
-}
-​
+const firstNonRepeated = s => [...s].find(val => s.indexOf(val) == s.lastIndexOf(val)) || null
